@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56dea3b5-d12d-4137-ae9a-c8bfdcf579f5" name="Default" comment="" />
+    <list default="true" id="56dea3b5-d12d-4137-ae9a-c8bfdcf579f5" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_ctp/ctp_enum.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_ctp/ctp_enum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_ctp/log/DialogRsp.con" beforeDir="false" afterPath="$PROJECT_DIR$/py_ctp/log/DialogRsp.con" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_ctp/log/Private.con" beforeDir="false" afterPath="$PROJECT_DIR$/py_ctp/log/Private.con" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_ctp/log/TradingDay.con" beforeDir="false" afterPath="$PROJECT_DIR$/py_ctp/log/TradingDay.con" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_ctp/test_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_ctp/test_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py_ctp/test_multi.py" beforeDir="false" afterPath="$PROJECT_DIR$/py_ctp/test_multi.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,16 +18,35 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/python_ctp$test_multi.coverage" NAME="test_multi Coverage Results" MODIFIED="1538017227697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/py_ctp" />
-    <SUITE FILE_PATH="coverage/python_ctp$test_api.coverage" NAME="test_api Coverage Results" MODIFIED="1538017141212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/py_ctp" />
+    <SUITE FILE_PATH="coverage/python_ctp$test_trade.coverage" NAME="test_trade Coverage Results" MODIFIED="1538017742304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/py_ctp" />
+    <SUITE FILE_PATH="coverage/python_ctp$test_multi.coverage" NAME="test_multi Coverage Results" MODIFIED="1538046141318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/py_ctp" />
+    <SUITE FILE_PATH="coverage/python_ctp$test_api.coverage" NAME="test_api Coverage Results" MODIFIED="1538032156815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/py_ctp" />
   </component>
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="test_api.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/py_ctp/test_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1750">
-              <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+            <state relative-caret-position="-850">
+              <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="enums.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/py_ctp/enums.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="structs.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/py_ctp/structs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="337" column="17" lean-forward="true" selection-start-line="337" selection-start-column="17" selection-end-line="337" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -27,8 +54,43 @@
       <file leaf-file-name="trade.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/py_ctp/trade.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+            <state relative-caret-position="225">
+              <caret line="226" column="59" lean-forward="true" selection-start-line="226" selection-start-column="59" selection-end-line="226" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ctp_quote.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/py_ctp/ctp_quote.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="ctp_struct.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/py_ctp/ctp_struct.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="17033" column="1093" selection-start-line="17033" selection-start-column="1078" selection-end-line="17033" selection-end-column="1093" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ctp_trade.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/py_ctp/ctp_trade.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="2060" selection-start-line="2060" selection-end-line="2060" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ctp_enum.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/py_ctp/ctp_enum.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="473">
+              <caret line="282" column="16" lean-forward="true" selection-start-line="266" selection-start-column="2" selection-end-line="282" selection-end-column="16" />
+              <folding>
+                <element signature="e#37#57#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -36,42 +98,52 @@
       <file leaf-file-name="test_multi.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/py_ctp/test_multi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="298" column="17" lean-forward="true" selection-start-line="298" selection-start-column="17" selection-end-line="298" selection-end-column="17" />
+            <state relative-caret-position="200">
+              <caret line="308" column="15" lean-forward="true" selection-start-line="308" selection-start-column="15" selection-end-line="308" selection-end-column="15" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DialogRsp.con" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/py_ctp/log/DialogRsp.con">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="Private.con" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/py_ctp/log/Private.con">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="QueryRsp.con" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/py_ctp/log/QueryRsp.con">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="TradingDay.con" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/py_ctp/log/TradingDay.con">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="test_trade.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/py_ctp/test_trade.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+            <state relative-caret-position="250">
+              <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+              <folding>
+                <element signature="e#100#133#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>OrderTypeType</find>
+      <find>CombOffsetFlag</find>
+      <find>OrderSubmitStatus</find>
+      <find>OrderStatusType</find>
+      <find>ActionFlagType</find>
+      <find>OnRtnOrder</find>
+      <find>NoTradeQueueing</find>
+      <find>PositionDateType</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/py_ctp/test_api.py" />
+        <option value="$PROJECT_DIR$/py_ctp/ctp_enum.py" />
+        <option value="$PROJECT_DIR$/py_ctp/test_multi.py" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -88,6 +160,7 @@
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -175,14 +248,35 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="test_trade" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python_ctp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/py_ctp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/py_ctp/test_trade.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <list>
       <item itemvalue="Python.test_api" />
       <item itemvalue="Python.test_multi" />
+      <item itemvalue="Python.test_trade" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.test_multi" />
         <item itemvalue="Python.test_api" />
+        <item itemvalue="Python.test_trade" />
       </list>
     </recent_temporary>
   </component>
@@ -206,18 +300,18 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32997763" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33034715" />
+      <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="SciView" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39977604" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -232,14 +326,43 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/py_ctp/test_api.py</url>
+          <line>166</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/py_ctp/test_api.py</url>
+          <line>159</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/py_ctp/test_api.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/py_ctp/test_api.py</url>
+          <line>208</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/py_ctp/test_api.py</url>
+          <line>209</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/py_ctp/test_api.py</url>
+          <line>180</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="6" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/py_ctp/test_trade.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/py_ctp/log/DialogRsp.con">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -257,24 +380,75 @@
         <state relative-caret-position="-3701" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/py_ctp/test_api.py">
+    <entry file="file://$PROJECT_DIR$/py_ctp/ctp_quote.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/py_ctp/test_trade.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1750">
-          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        <state relative-caret-position="250">
+          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <folding>
+            <element signature="e#100#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/py_ctp/structs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="337" column="17" lean-forward="true" selection-start-line="337" selection-start-column="17" selection-end-line="337" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/py_ctp/trade.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        <state relative-caret-position="225">
+          <caret line="226" column="59" lean-forward="true" selection-start-line="226" selection-start-column="59" selection-end-line="226" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/py_ctp/enums.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/py_ctp/ctp_struct.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="17033" column="1093" selection-start-line="17033" selection-start-column="1078" selection-end-line="17033" selection-end-column="1093" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/py_ctp/test_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-850">
+          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/py_ctp/ctp_enum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="282" column="16" lean-forward="true" selection-start-line="266" selection-start-column="2" selection-end-line="282" selection-end-column="16" />
+          <folding>
+            <element signature="e#37#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/py_ctp/ctp_trade.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="2060" selection-start-line="2060" selection-end-line="2060" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/py_ctp/test_multi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="298" column="17" lean-forward="true" selection-start-line="298" selection-start-column="17" selection-end-line="298" selection-end-column="17" />
+        <state relative-caret-position="200">
+          <caret line="308" column="15" lean-forward="true" selection-start-line="308" selection-start-column="15" selection-end-line="308" selection-end-column="15" />
         </state>
       </provider>
     </entry>

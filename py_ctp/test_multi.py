@@ -12,13 +12,21 @@ from py_ctp.ctp_trade import Trade
 import _thread
 from time import sleep
 import csv,json,threading,time
+from queue import Queue
+from apscheduler.schedulers.blocking import BlockingScheduler
+
 
 TraderAddress=""
 MaketAddress=""
 Broker=""
 UserAccount=""
 Passwd=""
-OrderDict={}
+OrderDict={}  #保存每个合约的初始信息 key:future value:futureModel
+traderDict={}  #保存每个合约交易的信息
+endFlag=False  #标志每个合约是否交易结束
+future_queue=Queue()
+future_list=[]
+scheduler = BlockingScheduler()
 
 
 class FutureModel(object):
@@ -210,8 +218,28 @@ class Trader:
     def OnRtnOrder(self, pOrder: ctp.CThostFtdcOrderField):
         print("------OnRtnOrder----------")
         print(pOrder)
+        # 合约
+        instrumentId = pOrder.getInstrumentID()
+        # 订单状态
+        orderStatus = pOrder.getOrderStatus()
+        # 成交数量
+        traderVolume = pOrder.getVolumeTraded()
+        # 剩余数量
+        remainVolume = pOrder.getVolumeTotal()
+        # 将每次返回的报单回报保存在traderDict
+        traderDict[instrumentId] = pOrder
+        # 如果全部成交完，从剩余中减去成交量
+        OrderDict[instrumentId]=pOrder
+        if orderStatus==ctp.OrderStatusType.AllTraded or orderStatus==ctp.OrderStatusType.PartTradedNotQueueing and orderStatus==ctp.OrderStatusType.Canceled:
+            OrderDict[instrumentId].remain=int(OrderDict[instrumentId].remain)-traderVolume
+            del traderDict[instrumentId]
+        if len(traderDict.keys())==0:
+            batchInsertOrder(self)
+
+
+    def cancelAction(self, pOrder: ctp.CThostFtdcOrderField):
+        print("撤单")
         if pOrder.getSessionID() == self.Session and pOrder.getOrderStatus() == ctp.OrderStatusType.NoTradeQueueing:
-            print("撤单")
             self.t.ReqOrderAction(
                 self.broker, self.investor,
                 InstrumentID=pOrder.getInstrumentID(),
@@ -219,9 +247,6 @@ class Trader:
                 FrontID=pOrder.getFrontID(),
                 SessionID=pOrder.getSessionID(),
                 ActionFlag=ctp.ActionFlagType.Delete)
-
-
-
 
         # 报单
     def Order(self, f: ctp.CThostFtdcMarketDataField,needVolume):
@@ -276,6 +301,46 @@ class Trader:
 
 
 
+def batchInsertOrder(trader:Trader):
+    print("------batchInsertOrder-----")
+    #如果trderDict中的报单反馈没有处理完，不能进行再次报单
+    if len(traderDict.keys())>0:
+        return
+    if endFlag:
+        return
+    for key,value in OrderDict.items():
+        remainVolume = int(value.remain)
+        attr=value.attr
+        if remainVolume>0 and attr!="":
+            trader.Order(attr,remainVolume)
+
+
+def batchCancelOrder(trader:Trader):
+    judgeTraderOver()
+    if len(traderDict.keys())==0:
+        return
+    for key,value in traderDict.items():
+        trader.cancelAction(value)
+
+
+def judgeTraderOver():
+    global endFlag
+    for key,value in OrderDict.items():
+        remainVolume=int(value.remain)
+        if remainVolume>0:
+            return
+    endFlag=True
+    stopBuyAll()
+
+def stopBuyAll():
+    global endFlag
+    if endFlag:
+        scheduler.remove_all_jobs()
+        scheduler.shutdown(wait=False)
+
+
+
+
 
 if __name__ == '__main__':
     initSchedule()
@@ -284,23 +349,35 @@ if __name__ == '__main__':
     print(Passwd)
     print(OrderDict)
 
+    # 实例化行情接口
     quoter=Quoter(MaketAddress,Broker,UserAccount,Passwd)
-    # quoter.StartQuote()
-    # traderThread=threading.Thread(target=trader.StartQuote,daemon=True)
+    # 启动行情
     _thread.start_new_thread(quoter.StartQuote,())
-    time.sleep(5)
-    print(OrderDict)
-    time.sleep(5)
     # input()
-    trader=Trader(TraderAddress,Broker,UserAccount,Passwd)
+    #判断每个合约的行情是否有回复
+    maketInfoFlag = True
+    while maketInfoFlag:
+        nullFlag = 0
+        for key,value in OrderDict.items():
+            maketInfo=value.attr
+            if maketInfo=="":
+                nullFlag=1
+                break
+            else:
+                # maketInfo=ctp.CThostFtdcMarketDataField(maketInfo)
+                print(key,maketInfo.getInstrumentID(),maketInfo.getUpdateTime(),maketInfo.getLastPrice())
+        if nullFlag==0:
+            maketInfoFlag=False
+        time.sleep(5)
+    print(OrderDict)
+    # 实例化交易接口
+    trader = Trader(TraderAddress, Broker, UserAccount, Passwd)
     trader.Run()
-    time.sleep(5)
-    trader.ReqQryTradingAccount()
-    time.sleep(5)
-    trader.ReqQryInvestorPosition()
-    time.sleep(5)
-    for key,value in OrderDict.items():
-        if value.attr!="":
-            trader.Order(value.attr,int(value.volume))
+    batchInsertOrder(trader)
+    scheduler.add_job(func=batchCancelOrder,args=(trader,),trigger='interval',seconds=5)
+    scheduler.start()
 
-    input()
+
+
+
+    # input()

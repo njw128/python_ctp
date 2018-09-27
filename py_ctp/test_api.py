@@ -94,7 +94,7 @@ class Test:
             self.t.ReqAuthenticate(self.broker, self.investor, '@haifeng', '8MTL59FK1QGLKQW2')
         else:
             print("1-------------")
-            self.t.ReqUserLogin(BrokerID=self.broker, UserID=self.investor, Password=self.pwd, UserProductInfo='@haifeng')
+            self.t.ReqUserLogin(BrokerID=self.broker, UserID=self.investor, Password=self.pwd, UserProductInfo='@mingxi')
 
     def OnFrontDisconnected(self, reason: int):
         print(reason)

@@ -245,8 +245,11 @@ class BrokerFunctionCodeType(Enum):
 
 class OrderActionStatusType(Enum):
     """报单操作状态类型"""
+    """"已经提交"""
     Submitted = 97
+    """已经接受"""
     Accepted = 98
+    """已经被拒绝"""
     Rejected = 99
 
     #----------------------------------------------------------------------
@@ -261,13 +264,21 @@ class OrderActionStatusType(Enum):
 
 class OrderStatusType(Enum):
     """报单状态类型"""
+    """全部成交"""
     AllTraded = 48
+    """部分成交还在队列中"""
     PartTradedQueueing = 49
+    """部分成交不在队列中"""
     PartTradedNotQueueing = 50
+    """未成交还在队列中"""
     NoTradeQueueing = 51
+    """未成交不在队列中"""
     NoTradeNotQueueing = 52
+    """撤单"""
     Canceled = 53
+    """未知"""
     Unknown = 97
+    """尚未触发"""
     NotTouched = 98
     Touched = 99
 
@@ -283,12 +294,19 @@ class OrderStatusType(Enum):
 
 class OrderSubmitStatusType(Enum):
     """报单提交状态类型"""
+    """已经提交"""
     InsertSubmitted = 48
+    """撤单已经提交"""
     CancelSubmitted = 49
+    """修改已经提交"""
     ModifySubmitted = 50
+    """已经接受"""
     Accepted = 51
+    """报单已经被拒绝"""
     InsertRejected = 52
+    """撤单已经被拒绝"""
     CancelRejected = 53
+    """改单已经被拒绝"""
     ModifyRejected = 54
 
     #----------------------------------------------------------------------
@@ -303,7 +321,9 @@ class OrderSubmitStatusType(Enum):
 
 class PositionDateType(Enum):
     """持仓日期类型"""
+    """今日持仓"""
     Today = 49
+    """历史持仓"""
     History = 50
 
     #----------------------------------------------------------------------
@@ -318,7 +338,9 @@ class PositionDateType(Enum):
 
 class PositionDateTypeType(Enum):
     """持仓日期类型类型"""
+    """使用历史持仓"""
     UseHistory = 49
+    """不使用历史持仓"""
     NoUseHistory = 50
 
     #----------------------------------------------------------------------
@@ -333,8 +355,11 @@ class PositionDateTypeType(Enum):
 
 class TradingRoleType(Enum):
     """交易角色类型"""
+    """代理"""
     Broker = 49
+    """自营"""
     Host = 50
+    """做市商"""
     Maker = 51
 
     #----------------------------------------------------------------------
@@ -349,10 +374,15 @@ class TradingRoleType(Enum):
 
 class ProductClassType(Enum):
     """产品类型类型"""
+    # 期货
     Futures = 49
+    # 期权
     Options = 50
+    # 组合
     Combination = 51
+    # 即期
     Spot = 52
+    # 期转现
     EFP = 53
     SpotOption = 54
 
@@ -368,9 +398,13 @@ class ProductClassType(Enum):
 
 class InstLifePhaseType(Enum):
     """合约生命周期状态类型"""
+    # 未上市
     NotStart = 48
+    # 上市
     Started = 49
+    # 停牌
     Pause = 50
+    # 到期
     Expired = 51
 
     #----------------------------------------------------------------------
@@ -385,7 +419,9 @@ class InstLifePhaseType(Enum):
 
 class DirectionType(Enum):
     """买卖方向类型"""
+    # 买
     Buy = 48
+    # 卖
     Sell = 49
 
     #----------------------------------------------------------------------
@@ -400,7 +436,9 @@ class DirectionType(Enum):
 
 class PositionTypeType(Enum):
     """持仓类型类型"""
+    # 净持仓
     Net = 49
+    # 综合持仓
     Gross = 50
 
     #----------------------------------------------------------------------
@@ -415,8 +453,11 @@ class PositionTypeType(Enum):
 
 class PosiDirectionType(Enum):
     """持仓多空方向类型"""
+    # 净
     Net = 49
+    # 多头
     Long = 50
+    # 空头
     Short = 51
 
     #----------------------------------------------------------------------
@@ -431,10 +472,15 @@ class PosiDirectionType(Enum):
 
 class SysSettlementStatusType(Enum):
     """系统结算状态类型"""
+    # 不活跃
     NonActive = 49
+    # 启动
     Startup = 50
+    # 操作
     Operating = 51
+    # 结算
     Settlement = 52
+    # 结算完成
     SettlementFinished = 53
 
     #----------------------------------------------------------------------
@@ -449,7 +495,9 @@ class SysSettlementStatusType(Enum):
 
 class RatioAttrType(Enum):
     """费率属性类型"""
+    # 交易费率
     Trade = 48
+    # 结算费率
     Settlement = 49
 
     #----------------------------------------------------------------------
@@ -464,9 +512,13 @@ class RatioAttrType(Enum):
 
 class HedgeFlagType(Enum):
     """投机套保标志类型"""
+    # 投机
     Speculation = 49
+    # 套利
     Arbitrage = 50
+    # 套保
     Hedge = 51
+    # 做市商
     MarketMaker = 53
 
     #----------------------------------------------------------------------
@@ -514,20 +566,35 @@ class ClientIDTypeType(Enum):
 
 class OrderPriceTypeType(Enum):
     """报单价格条件类型"""
+    # 任意价
     AnyPrice = 49
+    # 限价
     LimitPrice = 50
+    # 最优价
     BestPrice = 51
+    # 最新价
     LastPrice = 52
+    # 最新价浮动上浮1个ticks
     LastPricePlusOneTicks = 53
+    # 最新价浮动上浮2个ticks
     LastPricePlusTwoTicks = 54
+    # 最新价浮动上浮3个ticks
     LastPricePlusThreeTicks = 55
+    # 卖一价
     AskPrice1 = 56
+    # 卖一价浮动上浮1个ticks
     AskPrice1PlusOneTicks = 57
+    # 卖一价浮动上浮2个ticks
     AskPrice1PlusTwoTicks = 65
+    # 卖一价浮动上浮3个ticks
     AskPrice1PlusThreeTicks = 66
+    # 买一价
     BidPrice1 = 67
+    # 买一价浮动上浮1个ticks
     BidPrice1PlusOneTicks = 68
+    # 买一价浮动上浮2个ticks
     BidPrice1PlusTwoTicks = 69
+    # 买一价浮动上浮3个ticks
     BidPrice1PlusThreeTicks = 70
     FiveLevelPrice = 71
 
@@ -543,10 +610,15 @@ class OrderPriceTypeType(Enum):
 
 class OffsetFlagType(Enum):
     """开平标志类型"""
+    # 开仓
     Open = 48
+    # 平仓
     Close = 49
+    # 强平
     ForceClose = 50
+    # 平今
     CloseToday = 51
+    # 平昨
     CloseYesterday = 52
     ForceOff = 53
     LocalForceClose = 54
@@ -563,12 +635,19 @@ class OffsetFlagType(Enum):
 
 class ForceCloseReasonType(Enum):
     """强平原因类型"""
+    # 非强平
     NotForceClose = 48
+    # 资金不足
     LackDeposit = 49
+    # 客户超仓
     ClientOverPositionLimit = 50
+    # 会员超仓
     MemberOverPositionLimit = 51
+    # 持仓非整数倍
     NotMultiple = 52
+    # 违规
     Violation = 53
+    # 其它
     Other = 54
     PersonDeliv = 55
 
@@ -584,11 +663,17 @@ class ForceCloseReasonType(Enum):
 
 class OrderTypeType(Enum):
     """报单类型类型"""
+    # 正常
     Normal = 48
+    # 报价衍生
     DeriveFromQuote = 49
+    # 组合衍生
     DeriveFromCombination = 50
+    # 组合报单
     Combination = 51
+    # 条件单
     ConditionalOrder = 52
+    # 互换单
     Swap = 53
 
     #----------------------------------------------------------------------
@@ -603,11 +688,17 @@ class OrderTypeType(Enum):
 
 class TimeConditionType(Enum):
     """有效期类型类型"""
+    # 立即完成，否则撤销
     IOC = 49
+    # 本节有效
     GFS = 50
+    # 当日有效
     GFD = 51
+    # 指定日期前有效
     GTD = 52
+    # 撤销前有效
     GTC = 53
+    # 集合竞价有效
     GFA = 54
 
     #----------------------------------------------------------------------
@@ -622,8 +713,11 @@ class TimeConditionType(Enum):
 
 class VolumeConditionType(Enum):
     """成交量类型类型"""
+    # 任何数量
     AV = 49
+    # 最小数量
     MV = 50
+    # 全部数量
     CV = 51
 
     #----------------------------------------------------------------------
@@ -638,21 +732,37 @@ class VolumeConditionType(Enum):
 
 class ContingentConditionType(Enum):
     """触发条件类型"""
+    # 立即
     Immediately = 49
+    # 止损
     Touch = 50
+    # 止赢
     TouchProfit = 51
+    # 预埋单
     ParkedOrder = 52
+    # 条件价大于最新价
     LastPriceGreaterThanStopPrice = 53
+    # 条件价大于等于最新价
     LastPriceGreaterEqualStopPrice = 54
+    # 条件价小于最新价
     LastPriceLesserThanStopPrice = 55
+    # 条件价小于等于最新价
     LastPriceLesserEqualStopPrice = 56
+    # 条件价大于卖一价
     AskPriceGreaterThanStopPrice = 57
+    # 条件价大于等于卖一价
     AskPriceGreaterEqualStopPrice = 65
+    # 条件价小于卖一价
     AskPriceLesserThanStopPrice = 66
+    # 条件价小于等于卖一价
     AskPriceLesserEqualStopPrice = 67
+    # 条件价大于买一价
     BidPriceGreaterThanStopPrice = 68
+    # 条件价大于等于买一价
     BidPriceGreaterEqualStopPrice = 69
+    # 条件价小于买一价
     BidPriceLesserThanStopPrice = 70
+    # 条件价小于等于买一价
     BidPriceLesserEqualStopPrice = 72
 
     #----------------------------------------------------------------------
@@ -667,7 +777,9 @@ class ContingentConditionType(Enum):
 
 class ActionFlagType(Enum):
     """操作标志类型"""
+    # 删除
     Delete = 48
+    # 修改
     Modify = 51
 
     #----------------------------------------------------------------------
@@ -682,8 +794,11 @@ class ActionFlagType(Enum):
 
 class TradingRightType(Enum):
     """交易权限类型"""
+    # 可以交易
     Allow = 48
+    # 只能平仓
     CloseOnly = 49
+    # 不能交易
     Forbidden = 50
 
     #----------------------------------------------------------------------
@@ -698,7 +813,9 @@ class TradingRightType(Enum):
 
 class OrderSourceType(Enum):
     """报单来源类型"""
+    # 来自参与者
     Participant = 48
+    # 来自管理员
     Administrator = 49
 
     #----------------------------------------------------------------------
@@ -714,10 +831,15 @@ class OrderSourceType(Enum):
 class TradeTypeType(Enum):
     """成交类型类型"""
     SplitCombination = 35
+    # 普通成交
     Common = 48
+    # 期权执行
     OptionsExecution = 49
+    # OTC成交
     OTC = 50
+    # 期转现衍生成交
     EFPDerived = 51
+    # 组合衍生成交
     CombinationDerived = 52
 
     #----------------------------------------------------------------------
@@ -732,8 +854,11 @@ class TradeTypeType(Enum):
 
 class PriceSourceType(Enum):
     """成交价来源类型"""
+    # 前成交价
     LastPrice = 48
+    # 买委托价
     Buy = 49
+    # 卖委托价
     Sell = 50
 
     #----------------------------------------------------------------------
@@ -748,12 +873,19 @@ class PriceSourceType(Enum):
 
 class InstrumentStatusType(Enum):
     """合约交易状态类型"""
+    # 开盘前
     BeforeTrading = 48
+    # 非交易
     NoTrading = 49
+    # 连续交易
     Continous = 50
+    # 集合竞价报单
     AuctionOrdering = 51
+    # 集合竞价价格平衡
     AuctionBalance = 52
+    # 集合竞价撮合
     AuctionMatch = 53
+    # 收盘
     Closed = 54
 
     #----------------------------------------------------------------------
@@ -768,8 +900,11 @@ class InstrumentStatusType(Enum):
 
 class InstStatusEnterReasonType(Enum):
     """品种进入交易状态原因类型"""
+    # 自动切换
     Automatic = 49
+    # 手动切换
     Manual = 50
+    # 熔断
     Fuse = 51
 
     #----------------------------------------------------------------------
@@ -784,8 +919,11 @@ class InstStatusEnterReasonType(Enum):
 
 class BatchStatusType(Enum):
     """处理状态类型"""
+    # 未上传
     NoUpload = 49
+    # 已上传
     Uploaded = 50
+    # 审核失败
     Failed = 51
 
     #----------------------------------------------------------------------
@@ -800,7 +938,9 @@ class BatchStatusType(Enum):
 
 class ReturnStyleType(Enum):
     """按品种返还方式类型"""
+    # 按所有品种
     All = 49
+    # 按品种
     ByProduct = 50
 
     #----------------------------------------------------------------------
@@ -815,7 +955,9 @@ class ReturnStyleType(Enum):
 
 class ReturnPatternType(Enum):
     """返还模式类型"""
+    # 按成交手数
     ByVolume = 49
+    # 按留存手续费
     ByFeeOnHand = 50
 
     #----------------------------------------------------------------------
