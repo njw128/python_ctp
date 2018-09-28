@@ -173,7 +173,9 @@ class Trader:
     def OnRspSettlementInfoConfirm(self, pSettlementInfoConfirm: ctp.CThostFtdcSettlementInfoConfirmField,
                                        pRspInfo: ctp.CThostFtdcRspInfoField, nRequestID: int, bIsLast: bool):
             print(pSettlementInfoConfirm,"-------------enter OnRspSettlementInfoConfirm------------------")
+            batchInsertOrder(self)
             # _thread.start_new_thread(self.StartQuote, ())
+
 
     def OnRtnInstrumentStatus(self, pInstrumentStatus: ctp.CThostFtdcInstrumentStatusField):
         print(pInstrumentStatus.getInstrumentStatus(),"---------enter OnRtnInstrumentStatus-------------")
@@ -229,7 +231,6 @@ class Trader:
         # 将每次返回的报单回报保存在traderDict
         traderDict[instrumentId] = pOrder
         # 如果全部成交完，从剩余中减去成交量
-        OrderDict[instrumentId]=pOrder
         if orderStatus==ctp.OrderStatusType.AllTraded or orderStatus==ctp.OrderStatusType.PartTradedNotQueueing and orderStatus==ctp.OrderStatusType.Canceled:
             OrderDict[instrumentId].remain=int(OrderDict[instrumentId].remain)-traderVolume
             del traderDict[instrumentId]
@@ -325,11 +326,13 @@ def batchCancelOrder(trader:Trader):
 
 def judgeTraderOver():
     global endFlag
+    print("endFlag------1", endFlag)
     for key,value in OrderDict.items():
         remainVolume=int(value.remain)
         if remainVolume>0:
             return
     endFlag=True
+    print("endFlag------2", endFlag)
     stopBuyAll()
 
 def stopBuyAll():
@@ -373,7 +376,7 @@ if __name__ == '__main__':
     # 实例化交易接口
     trader = Trader(TraderAddress, Broker, UserAccount, Passwd)
     trader.Run()
-    batchInsertOrder(trader)
+    # batchInsertOrder(trader)
     scheduler.add_job(func=batchCancelOrder,args=(trader,),trigger='interval',seconds=5)
     scheduler.start()
 
